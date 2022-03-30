@@ -1,0 +1,48 @@
+/* Colores HEX */
+.black{
+  background-color: #090909;
+}
+
+.grey{
+  background-color: #878472;
+}
+
+.white{
+  background-color: #ffffff;
+}
+
+.yellow{
+  background-color: #ffb41f;
+}
+
+.red{
+  background-color: #960200;
+}
+
+.text-black{
+  color: #090909;
+}
+
+.text-grey{
+  color: #878472;
+}
+
+.text-white{
+  color: #ffffff;
+}
+
+.text-yellow{
+  color: #ffb41f;
+}
+
+.text-red{
+  color: #960200;
+}
+
+
+/* Hover 
+----------------------------------------------------------------------------------------*/
+.redLink:hover{
+  transition: 1s;
+  color: #960200 !important;
+}

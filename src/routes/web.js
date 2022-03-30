@@ -8,6 +8,9 @@ const controllersWeb = require(path.resolve(__dirname, "..", "controllers", "con
 
 //Creación de las rutas
 router.get("/", controllersWeb.index);
+router.get("/about", controllersWeb.about);
+router.get("/contact", controllersWeb.contact);
+router.get("/legal", controllersWeb.legal);
 
 //Exportamos el módulo
 module.exports = router;

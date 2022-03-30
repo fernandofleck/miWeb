@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Requerimos las rutas
-var indexRouter = require('./routes/index');
+var webRouter = require('./routes/web');
+var servicesRouter = require("./routes/services");
 
 var app = express();
 
@@ -17,10 +18,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Implementamos las rutas
-app.use(indexRouter);
+app.use(webRouter);
+app.use(servicesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
