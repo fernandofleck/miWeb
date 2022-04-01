@@ -1,0 +1,57 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Superpoderes Web</p>
+                </div>
+            </div>
+
+            <!-- Tabla imágenes página principal -->
+            <div class="row justify-content-around">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Ruta</th>
+                            <th scope="col-1">Editar</th>
+                            <th scope="col-1">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let i = 0; i < images.length; i++ ) { %>
+                            <tr class="text-center align-middle">
+                                <th scope="row"><%= images[i].id %></th>
+                                <td><a class="link-dark text-decoration-none" href="/productAd/<%= images[i].id %>"><%= images[i].name %></a></td>
+                                <td><%= images[i].autor %></td>
+                                <td><%= images[i].routeI %></td>
+                                <td><a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/admin/edit/<%= images[i].id %>"><img src="/icon/edit.svg" class="color-light" alt="Editar"></a></td>
+                                <td><a type="button" class="btn btn-sm" title="Eliminar" aria-label="Eliminar" href="/admin/delete/<%= images[i].id %>"><img src="/icon/trash-2.svg" class="color-light" alt="Eliminar"></a></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <a class="btn shadow p-0 m-auto d-flex align-items-center justify-content-around" role="button" href="/super/newImg" title="Añadir Producto"><img src="/icon/plus-circle.svg" class="" alt="Añadir Producto"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>

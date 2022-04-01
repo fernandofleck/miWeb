@@ -1,0 +1,35 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Superpoderes Web</p>
+                </div>
+            </div>
+
+            <!-- Menú -->
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 border-0">
+                        <img src="./icon/edit.svg" class="card-img-top is-72 mx-auto" alt="...">
+                        <div class="card-body text-center">
+                            <a class="card-title h5 text-decoration-none text-yellow redLink" href="/super/table" role="text">Editar Página Principal</a>
+                            <p class="card-text text-grey">Subir y bajar imágenes de la pantalla principal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>

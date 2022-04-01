@@ -1,11 +1,15 @@
 // Requerimos lo necesario
 const path = require("path");
+const fs = require("fs");
 
 // Exportamos el modulo
 module.exports = {
 	index: (req, res) => {
+		//Obtención de Datos del archivo Json
+        let images = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "imagesPrincipalPage.json")));
+
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"));
+		res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"), {images});
 	},
 
 	about: (req, res) => {
