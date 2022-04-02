@@ -1,0 +1,76 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+
+            <!-- Inicio Container -->
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Frases</p>
+                </div>
+            </div>
+
+            <!-- Carga de frase nueva -->
+            <div class="row m-auto">
+                <form class="d-flex flex-column" action="/super/savePhrase" method="POST">
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-lg-1 col-form-label">Frase</label>
+                        <div class="col-10 col-lg-11 p-0">
+                            <textarea class="form-control" rows="2" name="phrase" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-lg-1 col-form-label">Autor</label>
+                        <div class="col-10 col-lg-11 p-0">
+                            <input name="autor" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-lg-1 col-form-label">Fuente</label>
+                        <div class="col-10 col-lg-11 p-0">
+                            <input name="bookOrPage" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 btn-group ms-auto">
+                        <a class="btn btn-dark is-3" href="/super" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="position-absolute top-50 start-50 translate-middle" alt="Volver"></a>
+                        <button type="reset" class="btn btn-dark is-3" title="Borrar"><img src="/icon/wind.svg" class="position-absolute top-50 start-50 translate-middle" alt="Borrar"></button>
+                        <button type="submit" class="btn btn-dark is-3" title="Guardar"><img src="/icon/save.svg" class="position-absolute top-50 start-50 translate-middle" alt="Guardar"></button>
+                    </div>
+    
+                </form>
+            </div>
+
+            <!-- Lista de frases -->
+            <div class="row">
+                <div class="col mt-4 mb-2">
+                    <p class="text-red text-center h3">Frases cargadas</p>
+                </div>
+            </div>
+
+            <div class="card my-3">
+                <ul class="list-group list-group-flush">
+                    <% for (let i = 0; i < phrases.length; i++) { %> 
+                        <li class="list-group-item d-flex">
+                            <p class="m-0 p-0 flex-grow-1 align-self-center">"<%= phrases[i].phrase %>" - <%= phrases[i].autor %></p>
+                            <a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/admin/edit/<%= phrases[i].id %>"><img src="/icon/edit.svg" class="is-24" alt="Editar"></a>
+                            <a type="button" class="btn btn-sm" title="Eliminar" aria-label="Eliminar" href="/admin/delete/<%= phrases[i].id %>"><img src="/icon/trash-2.svg" class="is-24" alt="Eliminar"></a>
+                        </li>
+                    <% } %> 
+                </ul>
+            </div>
+
+            <!-- Fin Container -->
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>

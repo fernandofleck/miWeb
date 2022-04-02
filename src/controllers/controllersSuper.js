@@ -46,5 +46,37 @@ module.exports = {
 
         //Redireccionamos a la vista del administrador
         res.redirect("/super/table");
+    },
+
+    phrases: (req, res) => {
+        //Obtención de Datos del archivo Json
+        let phrases = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "phrases.json")));
+
+        res.render(path.resolve(__dirname, "..", "views", "admins", "phrases.ejs"), {phrases});
+    },
+
+    savePhrase: (req, res) => {
+        //Obtención de Datos del archivo Json
+        let phrases = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "phrases.json")));
+
+        //Aqui se indica el formato de como se va a guardar la información
+        let newPhrase = {
+            id: phrases.length + 1,
+            phrase: req.body.phrase,
+            autor: req.body.autor,
+			bookOrPage: req.body.bookOrPage,
+        }
+
+        //Agregamos al array el nuevo producto
+        phrases.push(newPhrase);
+
+        //Convertimos el array en un string e indicamos que se guarde un producto bajo el otro con "null, 2"
+        let newPhrasesJson = JSON.stringify(phrases, null, 2);
+
+        //Sobreescribimos el archivo Json guardando el nuevo producto
+        fs.writeFileSync(path.resolve(__dirname,"..", "data", "phrases.json"), newPhrasesJson);
+
+        //Redireccionamos a la vista del administrador
+        res.redirect("/super/phrases");
     }
 }

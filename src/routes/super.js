@@ -24,6 +24,8 @@ router.get("/super", controllersSuper.super);
 router.get("/super/table", controllersSuper.superTable);
 router.get("/super/newImg", controllersSuper.newImg);
 router.post("/super/saveImg", upload.any("images"), controllersSuper.saveImg);
+router.get("/super/phrases", controllersSuper.phrases);
+router.post("/super/savePhrase", controllersSuper.savePhrase);
 
 //Exportamos el módulo
 module.exports = router;
