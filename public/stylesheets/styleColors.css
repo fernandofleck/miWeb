@@ -46,3 +46,25 @@
   transition: 1s;
   color: #960200 !important;
 }
+
+.yellowLink:hover{
+  transition: 1s;
+  color: #ffb41f !important;
+}
+
+
+/* Input 
+----------------------------------------------------------------------------------------*/
+input:focus:focus-within {
+  outline:rgba(255, 180, 31, 0.8) solid 0.25rem;
+  border: rgba(255, 180, 31, 0.5) solid 0.1rem;
+  transition: 1s;
+}
+
+
+/* Button 
+----------------------------------------------------------------------------------------*/
+button:focus:focus-within {
+  outline:rgba(255, 180, 31, 0.8) solid 0.25rem;
+  border: rgba(255, 180, 31, 0.5) solid 0.1rem;
+}

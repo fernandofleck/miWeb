@@ -1,13 +1,13 @@
-<nav class="navbar h-6r fixed-top navbar-expand-lg navbar-light white shadow">
+<nav class="navbar h-6r fixed-top navbar-expand-lg navbar-light white shadow position-fixed" id="navBar">
     <div class="container-fluid">
-        <a class="navbar-brand text-black mx-3" href="/"><p class="h2">Fernando Fleck</p></a>
+        <a class="navbar-brand text-black yellowLink mx-3" href="/"><p class="h2">Fernando Fleck</p></a>
         
         <ul class="navbar-nav">
             <li class="nav-item h5 me-2">
-                <a class="nav-link text-grey" href="/services">Servicios</a>
+                <a class="nav-link text-grey yellowLink" href="/services">Servicios</a>
             </li>
             <li class="nav-item h5 me-2">
-                <a class="nav-link text-grey" href="/about">Sobre mí</a>
+                <a class="nav-link text-grey yellowLink" href="/about">Sobre mí</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="https://www.instagram.com/fernando.fleck/" role="button" aria-pressed="true" title="Instagram"><img src="/icon/instagram.svg" class="is-24" alt="Instagram"></a>
@@ -24,3 +24,17 @@
         </ul>
     </div>
 </nav>
+
+<script type="text/javascript">
+    let prevScrollPos = window.pageYOffset;
+
+    window.onscroll = () => {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollPos > currentScrollPos) {
+            document.getElementById("navBar").style.top = "0";
+        } else {
+            document.getElementById("navBar").style.top = "-6rem";
+        }
+        prevScrollPos = currentScrollPos;
+    }
+</script>

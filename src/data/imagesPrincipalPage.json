@@ -17,14 +17,6 @@
   },
   {
     "id": "3",
-    "name": "Bikepacking",
-    "autor": "Patrick Hendry",
-    "autorLink": "https://unsplash.com/@worldsbetweenlines",
-    "routeI": "/bikepacking",
-    "img": "indexImage-1648752004747.jpg"
-  },
-  {
-    "id": "4",
     "name": "Coaching",
     "autor": "Jamie Street",
     "autorLink": "https://unsplash.com/@jamie452",
@@ -32,7 +24,7 @@
     "img": "indexImage-1648752073853.jpg"
   },
   {
-    "id": "5",
+    "id": "4",
     "name": "Programming",
     "autor": "Clément Hélardot",
     "autorLink": "https://unsplash.com/@clemhlrdt",

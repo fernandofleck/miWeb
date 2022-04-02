@@ -4,24 +4,57 @@
     <body>
         <!-- NavBar -->
         <%- include("../partials/nav.ejs") %>
+
+        <!-- Float Button -->
+        <%- include("../partials/button.ejs") %>
         
-        <div class="container mt-6">
-            <div class="row vh-50">
+        <div class="container-fluid mt-6 p-0">
+
+            <!-- Inicio Container -->
+            <!-- Frase del día -->
+            <div class="row vh-100">
                 <div class="col m-auto">
-                    <p class="text-red text-center h2">"La felicidad queda en la capacidad de disfrutar con menos, y no en buscar más." - Sócrates</p>
+                    <p class="text-red text-center h2 mx-auto vw-75">"La felicidad queda en la capacidad de disfrutar con menos, y no en buscar más." - Sócrates</p>
                 </div>
             </div>
 
-            <% for( let j = 0; j < images.length; j++ ) { %>
-                <div class="card bg-dark text-white">
-                    <img src="/images/index/<%= images[j].img %>" class="card-img" alt="<%= images[j].name %>">
+            <% for( let i = 0; i < images.length; i++ ) { %>
+                <div class="card bg-dark text-white border-0 rounded-0 m-0 p-0 zi-1000">
+                    <img src="/images/index/<%= images[i].img %>" class="card-img rounded-0" alt="<%= images[i].name %>">
                     <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text">Last updated 3 mins ago</p>
+                        <a href="<%= images[i].routeI %>" class="text-decoration-none mx-auto">
+                            <h3 class="card-title text-black m-auto bg-light text-center bg-opacity-25 yellowLink rounded"><%= images[i].name %></h3>
+                        </a>
+                        <p class="card-text text-center text-black bg-light bg-opacity-25 rounded position-absolute bottom-0 end-0 mx-2 mb-2"><small class="m-2">Photo by <a class="text-black yellowLink text-decoration-none" href="<%= images[i].autorLink %>"><%= images[i].autor %></a> on <a class="text-black yellowLink text-decoration-none" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
                     </div>
-                  </div>
+                </div>
             <% } %>
+
+            <!-- Suscription -->
+            <div class="card bg-dark text-white border-0 rounded-0 m-0 p-0 zi-1000">
+                <img src="/images/subscribe.jpg" class="card-img rounded-0" alt="Suscribite">
+                <div class="card-img-overlay ">
+                    <div class="h-60">
+                    </div>
+                    <div class="vw-50 mx-auto">
+                        <h3 class="card-title text-black m-auto bg-light text-center bg-opacity-25 yellowLink rounded">Suscribite</h3>
+                    </div>
+                    <div class="vw-50 my-3 mx-auto">
+                        <p class="card-title text-white m-auto text-center rounded">Recibí en tu correo la newsletter semanal</p>
+                    </div>
+                    <div class="input-group my-3 vw-50 mx-auto bg-opacity-25">
+                        <input type="email" class="form-control bg-opacity-25" placeholder="¡Acá tu E-mail!" aria-label="¡Acá tu E-mail!" aria-describedby="button-addon2" required>
+                        <button class="btn btn-light yellowLink" type="submit">Suscribir</button>
+                    </div>
+                    <div class="form-check my-3 vw-50 mx-auto">
+                        <input class="form-check-input" type="checkbox" value="" id="politicChek" required>
+                        <label class="form-check-label" for="politicChek">He leído las <a href="/legal" class="text-decoration-none text-yellow redLink">políticas de privacidad.</a></label>
+                    </div>
+                    <p class="card-text text-center text-black bg-light bg-opacity-25 rounded position-absolute bottom-0 end-0 mx-2 mb-2"><small class="m-2">Photo by <a class="text-black yellowLink text-decoration-none" href="https://unsplash.com/@clarktibbs">Clark Tibbs</a> on <a class="text-black yellowLink text-decoration-none" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
+                </div>
+            </div>
+
+            <!-- Fin Container -->
         </div>
 
         <!-- Footer -->
