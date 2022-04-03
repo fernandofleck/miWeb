@@ -78,5 +78,25 @@ module.exports = {
 
         //Redireccionamos a la vista del administrador
         res.redirect("/super/phrases");
+    },
+
+    deletePhrase: (req, res) => {
+        //Obtención de Datos del archivo Json
+        let phrases = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "phrases.json")));
+
+        // Guardamos la frase a borrar
+        const phraseDeleteId = req.params.id;
+
+        // Filtramos el arreglo original para eliminar el producto a borrar
+        const filteredPhrases = phrases.filter(phrase => phrase.id != phraseDeleteId);
+
+        // Se convierte el arreglo en un string y se indica que una frase se guarda bajo la otra con null, 2.
+        let phrasesToSave = JSON.stringify(filteredPhrases, null, 2);
+
+        // Se sobreescribe el archivo JSON
+        fs.writeFileSync(path.resolve(__dirname, "..", "data", "phrases.json"), phrasesToSave);
+
+        // Redireccionamos a la vista
+        res.redirect("/super/phrases");
     }
 }

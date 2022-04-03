@@ -32,7 +32,7 @@
                     <div class="row mb-3 mx-0 input-group">
                         <label class="col-2 col-lg-1 col-form-label">Fuente</label>
                         <div class="col-10 col-lg-11 p-0">
-                            <input name="bookOrPage" type="text" class="form-control" required>
+                            <input name="bookOrPage" type="text" class="form-control">
                         </div>
                     </div>
                     
@@ -57,8 +57,8 @@
                     <% for (let i = 0; i < phrases.length; i++) { %> 
                         <li class="list-group-item d-flex">
                             <p class="m-0 p-0 flex-grow-1 align-self-center">"<%= phrases[i].phrase %>" - <%= phrases[i].autor %></p>
-                            <a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/admin/edit/<%= phrases[i].id %>"><img src="/icon/edit.svg" class="is-24" alt="Editar"></a>
-                            <a type="button" class="btn btn-sm" title="Eliminar" aria-label="Eliminar" href="/admin/delete/<%= phrases[i].id %>"><img src="/icon/trash-2.svg" class="is-24" alt="Eliminar"></a>
+                            <!--<a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/super/edit/< phrases[i].id %>"><img src="/icon/edit.svg" class="is-24" alt="Editar"></a>-->
+                            <a type="button" class="btn btn-sm my-auto" title="Eliminar" aria-label="Eliminar" href="/super/deletePhrase/<%= phrases[i].id %>"><img src="/icon/trash-2.svg" class="is-24" alt="Eliminar"></a>
                         </li>
                     <% } %> 
                 </ul>

@@ -1,14 +1,98 @@
 [
   {
     "id": 1,
-    "phrase": "Ladfhfadhdfh",
-    "autor": "adfhfd",
-    "bookOrPage": " "
+    "phrase": "La felicidad queda en la capacidad de disfrutar con menos, y no en buscar más.",
+    "autor": "Sócrates",
+    "bookOrPage": ""
   },
   {
     "id": 2,
-    "phrase": "sdfhtrehrtrtherhrt",
-    "autor": "rthrt",
-    "bookOrPage": " "
+    "phrase": "Si comienzas tu día con las redes sociales, las noticias o el email, tené en cuenta que estás comenzando tu día a merced de los demás.\r\nLas redes sociales son otros que te dicen qué pensar.\r\nLas noticias son otros que te dicen qué ver.\r\nTu email son otros que te dicen qué hacer.",
+    "autor": "Ryan Holiday",
+    "bookOrPage": ""
+  },
+  {
+    "id": 3,
+    "phrase": "Esté tranquilo, trabaje duro y manténgase saludable. No es la ambición o la habilidad lo que te distinguirá, sino la cordura.",
+    "autor": "Ryan Holiday",
+    "bookOrPage": ""
+  },
+  {
+    "id": 4,
+    "phrase": "Quien mira hacia afuera, sueña. Quien mira hacia adentro, despierta.",
+    "autor": "Carl Jung",
+    "bookOrPage": ""
+  },
+  {
+    "id": 5,
+    "phrase": "Educar la mente sin educar el corazón no es educación en absoluto.",
+    "autor": "Aristóteles",
+    "bookOrPage": ""
+  },
+  {
+    "id": 6,
+    "phrase": "En todo caos hay un cosmos, en todo desorden un orden secreto.",
+    "autor": "Carl Jung",
+    "bookOrPage": ""
+  },
+  {
+    "id": 7,
+    "phrase": "¿Cuánto estás dispuesto a pagar por el dinero que ganas?",
+    "autor": "Simon Sinek",
+    "bookOrPage": ""
+  },
+  {
+    "id": 8,
+    "phrase": "Hay que considerar no de dónde viene la gente, sino hacia dónde va.",
+    "autor": "Séneca",
+    "bookOrPage": ""
+  },
+  {
+    "id": 9,
+    "phrase": "(C + H) * A => El Conocimiento y las Habilidades suman, pero la Actitud multiplica.",
+    "autor": "Victor Kuppers",
+    "bookOrPage": ""
+  },
+  {
+    "id": 10,
+    "phrase": "Muchas veces me he preguntado con admiración cómo cada uno se tiene en más estima que a todos y, sin embargo, toma en menos consideración su propia opinión personal que la de los demás.",
+    "autor": "Marco Aurelio",
+    "bookOrPage": ""
+  },
+  {
+    "id": 11,
+    "phrase": "Huimos de la soledad como de la peste, y por eso no la conocemos. Y por eso nos da miedo. La soledad enseña cosas que no enseña nadie ni nada más.",
+    "autor": "Joan Gallardo",
+    "bookOrPage": ""
+  },
+  {
+    "id": 12,
+    "phrase": "Tienes poder sobre tu mente, no sobre los eventos externos. Date cuenta de esto y encontrarás la fuerza.",
+    "autor": "Marco Aurelio",
+    "bookOrPage": ""
+  },
+  {
+    "id": 13,
+    "phrase": "Hay mucho que aprender. La vida es corta, y una vida sin conocimiento no es una vida.",
+    "autor": "Baltasar Gracián",
+    "bookOrPage": ""
+  },
+  {
+    "id": 14,
+    "phrase": "Lo que eliges leer es un voto hacia quién quieres llegar a ser.",
+    "autor": "Mark Manson",
+    "bookOrPage": ""
+  },
+  {
+    "id": 15,
+    "phrase": "Podemos pensar en el día venidero y desesperarnos por las cosas que no controlamos: a los demás, nuestra salud, el clima, el resultado de un proyecto cuando nos desprendemos de él. O podríamos pensar en ese mismo día y alegrarnos de lo que sí controlamos: la capacidad para decidir el significado de cualquier suceso.",
+    "autor": "Ryan Holiday",
+    "bookOrPage": ""
+  },
+  {
+    "id": 16,
+    "phrase": "No nos atrevemos a hacer las cosas porque sean difíciles, sino que son difíciles porque no nos atrevemos a hacerlas.",
+    "autor": "Séneca",
+    "bookOrPage": ""
   }
 ]

@@ -14,21 +14,24 @@
             <!-- Frase del día -->
             <div class="row vh-100">
                 <div class="col m-auto">
-                    <p class="text-red text-center h2 mx-auto vw-75">"La felicidad queda en la capacidad de disfrutar con menos, y no en buscar más." - Sócrates</p>
+                    <% let random = Math.floor(Math.random() * (phrases.length)) %> 
+                    <p class="text-red text-center h2 mx-auto vw-75">"<%= phrases[random].phrase %>"<br><br><%= phrases[random].autor %></p>
                 </div>
             </div>
 
-            <% for( let i = 0; i < images.length; i++ ) { %>
-                <div class="card bg-dark text-white border-0 rounded-0 m-0 p-0 zi-1000">
-                    <img src="/images/index/<%= images[i].img %>" class="card-img rounded-0" alt="<%= images[i].name %>">
-                    <div class="card-img-overlay">
-                        <a href="<%= images[i].routeI %>" class="text-decoration-none mx-auto">
-                            <h3 class="card-title text-black m-auto bg-light text-center bg-opacity-25 yellowLink rounded"><%= images[i].name %></h3>
-                        </a>
-                        <p class="card-text text-center text-black bg-light bg-opacity-25 rounded position-absolute bottom-0 end-0 mx-2 mb-2"><small class="m-2">Photo by <a class="text-black yellowLink text-decoration-none" href="<%= images[i].autorLink %>"><%= images[i].autor %></a> on <a class="text-black yellowLink text-decoration-none" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
+            <div class="row">
+                <% for( let i = 0; i < images.length; i++ ) { %>
+                    <div class="card bg-dark text-white border-0 rounded-0 m-0 p-0 zi-1000 col-12 col-md-6">
+                        <img src="/images/index/<%= images[i].img %>" class="card-img rounded-0" alt="<%= images[i].name %>">
+                        <div class="card-img-overlay">
+                            <a href="<%= images[i].routeI %>" class="text-decoration-none mx-auto">
+                                <h3 class="card-title text-black m-auto bg-light text-center bg-opacity-25 yellowLink rounded"><%= images[i].name %></h3>
+                            </a>
+                            <p class="card-text text-center text-black bg-light bg-opacity-25 rounded position-absolute bottom-0 end-0 mx-2 mb-2"><small class="m-2">Photo by <a class="text-black yellowLink text-decoration-none" href="<%= images[i].autorLink %>"><%= images[i].autor %></a> on <a class="text-black yellowLink text-decoration-none" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
+                        </div>
                     </div>
-                </div>
-            <% } %>
+                <% } %>
+            </div>
 
             <!-- Suscription -->
             <div class="card bg-dark text-white border-0 rounded-0 m-0 p-0 zi-1000">

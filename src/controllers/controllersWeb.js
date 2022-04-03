@@ -7,9 +7,10 @@ module.exports = {
 	index: (req, res) => {
 		//Obtención de Datos del archivo Json
         let images = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "imagesPrincipalPage.json")));
+		let phrases = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "phrases.json")));
 
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"), {images});
+		res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"), {images, phrases});
 	},
 
 	about: (req, res) => {
