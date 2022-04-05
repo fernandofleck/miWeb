@@ -94,5 +94,17 @@
     "phrase": "No nos atrevemos a hacer las cosas porque sean difíciles, sino que son difíciles porque no nos atrevemos a hacerlas.",
     "autor": "Séneca",
     "bookOrPage": ""
+  },
+  {
+    "id": 17,
+    "phrase": "No hay obra en esta vida tan imposible que no puedas hacerla. Toda tu vida debe ser vivida como un acto heroico.",
+    "autor": "Leo Tolstoy",
+    "bookOrPage": ""
+  },
+  {
+    "id": 18,
+    "phrase": "La gratitud puede transformar días comunes en momentos extraordinarios, trabajos rutinarios en pequeñas dosis de alegría, y obstáculos en geniales oportunidades.",
+    "autor": "William Arthur Ward",
+    "bookOrPage": ""
   }
 ]

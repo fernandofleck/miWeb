@@ -1,0 +1,75 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Cargar Archivos</p>
+                </div>
+            </div>
+
+            <!-- Formulario de Carga -->
+            <div class="row m-auto">
+                <form class="d-flex flex-column" action="/super/saveFile" method="POST"> <!-- Cada vez que hagamos un formulario donde el archivo viaje a la ruta que especifiquemos tenemos que agregar: enctype = "multipart/form-data" -->
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Nombre</label>
+                        <div class="col-10 p-0">
+                            <input name="name" type="text" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Categoría</label>
+                        <div class="col-10 p-0">
+                            <input name="category" type="text" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Link</label>
+                        <div class="col-10 p-0">
+                            <input name="link" type="text" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-3 btn-group ms-auto">
+                        <a class="btn btn-light shadow alt3rem" href="/super" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
+                        <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>
+                        <button type="submit" class="btn btn-light shadow alt3rem" title="Guardar"><img src="/icon/save.svg" class="color-light" alt="Guardar"></button>
+                    </div>
+    
+                </form>
+            </div>
+
+            <!-- Lista de archivos -->
+            <div class="row">
+                <div class="col mt-4 mb-2">
+                    <p class="text-red text-center h3">Archivos cargados</p>
+                </div>
+            </div>
+
+            <div class="card my-3">
+                <ul class="list-group list-group-flush">
+                    <% for (let i = 0; i < files.length; i++) { %> 
+                        <li class="list-group-item d-flex">
+                            <p class="m-0 p-0 flex-grow-1 align-self-center"><%= files[i].name %></p>
+                            <p class="m-0 p-0 flex-grow-1 align-self-center"><%= files[i].category %></p>
+                            <!--<a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/super/edit/< phrases[i].id %>"><img src="/icon/edit.svg" class="is-24" alt="Editar"></a>-->
+                            <a type="button" class="btn btn-sm my-auto" title="Eliminar" aria-label="Eliminar" href="/super/deleteFile/<%= files[i].id %>"><img src="/icon/trash-2.svg" class="is-24" alt="Eliminar"></a>
+                        </li>
+                    <% } %> 
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>
