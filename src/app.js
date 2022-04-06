@@ -6,8 +6,11 @@ var logger = require('morgan');
 
 // Requerimos las rutas
 var webRouter = require('./routes/web');
-var servicesRouter = require("./routes/services");
-var superRouter = require("./routes/super");
+/*var servicesRouter = require("./routes/services");
+var superRouter = require("./routes/super");*/
+
+// Requerimos los middlewares
+const maintenance = require("./middlewares/maintenance");
 
 var app = express();
 
@@ -24,8 +27,11 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 
 // Implementamos las rutas
 app.use(webRouter);
-app.use(servicesRouter);
-app.use(superRouter);
+/*app.use(servicesRouter);
+app.use(superRouter);*/
+
+// Implementamos los middlewares
+app.use(maintenance);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
