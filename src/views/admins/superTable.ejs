@@ -8,7 +8,7 @@
         <div class="container mt-6">
             <div class="row">
                 <div class="col p-4">
-                    <p class="text-red text-center h1">Superpoderes Web</p>
+                    <p class="text-red text-center h1">Secciones de la Web</p>
                 </div>
             </div>
 
@@ -26,23 +26,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% for( let i = 0; i < images.length; i++ ) { %>
+                        <% for( let i = 0; i < sections.length; i++ ) { %>
                             <tr class="text-center align-middle">
-                                <th scope="row"><%= images[i].id %></th>
-                                <td><a class="link-dark text-decoration-none" href="/productAd/<%= images[i].id %>"><%= images[i].name %></a></td>
-                                <td><%= images[i].autor %></td>
-                                <td><%= images[i].routeI %></td>
-                                <td><a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/admin/edit/<%= images[i].id %>"><img src="/icon/edit.svg" class="color-light" alt="Editar"></a></td>
-                                <td><a type="button" class="btn btn-sm" title="Eliminar" aria-label="Eliminar" href="/admin/delete/<%= images[i].id %>"><img src="/icon/trash-2.svg" class="color-light" alt="Eliminar"></a></td>
+                                <th scope="row"><%= sections[i].id %></th>
+                                <td><a class="link-dark text-decoration-none" href="/productAd/<%= sections[i].id %>"><%= sections[i].name %></a></td>
+                                <td><%= sections[i].autor %></td>
+                                <td><%= sections[i].routeI %></td>
+                                <td><a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/admin/edit/<%= sections[i].id %>"><img src="/icon/edit.svg" class="color-light" alt="Editar"></a></td>
+                                <td><a type="button" class="btn btn-sm" title="Eliminar" aria-label="Eliminar" href="/admin/delete/<%= sections[i].id %>"><img src="/icon/trash-2.svg" class="color-light" alt="Eliminar"></a></td>
                             </tr>
                         <% } %>
                     </tbody>
                 </table>
             </div>
 
-            <div class="row">
-                <div class="col">
-                    <a class="btn shadow p-0 m-auto d-flex align-items-center justify-content-around" role="button" href="/super/newImg" title="Añadir Producto"><img src="/icon/plus-circle.svg" class="" alt="Añadir Producto"></a>
+            <div class="d-flex flex-column">
+                <div class="mb-3 btn-group ms-auto">
+                        <a class="btn btn-light shadow is-3" href="/super/view" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="position-absolute top-50 start-50 translate-middle" alt="Volver"></a>
+                        <a class="btn btn-light shadow is-3" role="button" href="/super/newSection" title="Añadir Producto"><img src="/icon/plus-circle.svg" class="position-absolute top-50 start-50 translate-middle" alt="Añadir Producto"></a>
                 </div>
             </div>
 

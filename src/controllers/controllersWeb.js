@@ -6,11 +6,11 @@ const fs = require("fs");
 module.exports = {
 	index: (req, res) => {
 		//Obtención de Datos del archivo Json
-        let images = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "imagesPrincipalPage.json")));
+        let sections = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "sections.json")));
 		let phrases = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "phrases.json")));
 
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"), {images, phrases});
+		res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"), {sections, phrases});
 	},
 
 	about: (req, res) => {
@@ -23,5 +23,20 @@ module.exports = {
 	
 	legal: (req, res) => {
 		res.render(path.resolve(__dirname, "..", "views", "web", "legal.ejs"));
+	},
+	
+	category: (req, res) => {
+		//Obtención de Datos del archivo Json
+        let sections = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "sections.json")));
+        let files = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "files.json")));
+
+		//console.log("SECTION: " + req.params.routeS);
+
+		// Buscamos el nombre la seccion a mostrar
+        const sectionToShow = sections.find(section => section.routeS == req.params.routeS);
+
+		const categoryFiles = files.filter(file => file.category == req.params.routeS);
+
+		res.render(path.resolve(__dirname, "..", "views", "web", "category.ejs"), {sectionToShow, categoryFiles});
 	}
 }

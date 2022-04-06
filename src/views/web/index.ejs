@@ -20,14 +20,14 @@
             </div>
 
             <div class="row">
-                <% for( let i = 0; i < images.length; i++ ) { %>
+                <% for( let i = 0; i < sections.length; i++ ) { %>
                     <div class="card bg-dark text-white border-0 rounded-0 m-0 p-0 zi-1000 col-12 col-md-6">
-                        <img src="/images/index/<%= images[i].img %>" class="card-img rounded-0" alt="<%= images[i].name %>">
+                        <img src="/images/index/<%= sections[i].img %>" class="card-img rounded-0" alt="<%= sections[i].name %>">
                         <div class="card-img-overlay">
-                            <a href="<%= images[i].routeI %>" class="text-decoration-none mx-auto">
-                                <h3 class="card-title text-black m-auto bg-light text-center bg-opacity-25 yellowLink rounded"><%= images[i].name %></h3>
+                            <a href="/<%= sections[i].routeS %>" class="text-decoration-none mx-auto">
+                                <h3 class="card-title text-black m-auto bg-light text-center bg-opacity-25 yellowLink rounded"><%= sections[i].name %></h3>
                             </a>
-                            <p class="card-text text-center text-black bg-light bg-opacity-25 rounded position-absolute bottom-0 end-0 mx-2 mb-2"><small class="m-2">Photo by <a class="text-black yellowLink text-decoration-none" href="<%= images[i].autorLink %>"><%= images[i].autor %></a> on <a class="text-black yellowLink text-decoration-none" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
+                            <p class="card-text text-center text-black bg-light bg-opacity-25 rounded position-absolute bottom-0 end-0 mx-2 mb-2"><small class="m-2">Photo by <a class="text-black yellowLink text-decoration-none" href="<%= sections[i].autorLink %>"><%= sections[i].autor %></a> on <a class="text-black yellowLink text-decoration-none" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
                         </div>
                     </div>
                 <% } %>

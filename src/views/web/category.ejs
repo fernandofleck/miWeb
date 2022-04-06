@@ -1,0 +1,39 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+
+            <!-- Inicio Container -->
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1 text-capitalize"><%= sectionToShow.routeS %></p>
+                </div>
+            </div>
+
+            <!-- Archivos disponibles -->
+            <div class="card my-3">
+                <ul class="list-group list-group-flush">
+                    <% for (let i = 0; i < categoryFiles.length; i++) { %> 
+                        <li class="list-group-item d-flex">
+                            <p class="m-0 p-0 flex-grow-1 align-self-center"><%= categoryFiles[i].name %></p>
+                            <p class="m-0 p-0 flex-grow-1 align-self-center"><%= categoryFiles[i].category %></p>
+                            <a type="button" class="btn btn-sm my-auto" title="Descargar" aria-label="Eliminar" href="<%= categoryFiles[i].link %>" target="_blank"><img src="/icon/download-cloud.svg" class="is-24" alt="Descargar"></a>
+                        </li>
+                    <% } %> 
+                </ul>
+            </div>
+
+            <!-- Fin Container -->
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>

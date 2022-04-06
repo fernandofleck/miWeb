@@ -20,10 +20,10 @@ const upload = multer({storage: storage});
 const controllersSuper = require(path.resolve(__dirname, "..", "controllers", "controllersSuper.js"));
 
 //Creación de las rutas
-router.get("/super", controllersSuper.super);
+router.get("/super/view", controllersSuper.superView);
 router.get("/super/table", controllersSuper.superTable);
-router.get("/super/newImg", controllersSuper.newImg);
-router.post("/super/saveImg", upload.any("images"), controllersSuper.saveImg);
+router.get("/super/newSection", controllersSuper.newSection);
+router.post("/super/saveSection", upload.any("images"), controllersSuper.saveSection);
 router.get("/super/phrases", controllersSuper.phrases);
 router.post("/super/savePhrase", controllersSuper.savePhrase);
 router.get("/super/deletePhrase/:id", controllersSuper.deletePhrase);

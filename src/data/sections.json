@@ -4,7 +4,7 @@
     "name": "Kayaking",
     "autor": "Benjamin Davies",
     "autorLink": "https://unsplash.com/@bendavisual",
-    "routeI": "/kayaking",
+    "routeS": "kayaking",
     "img": "indexImage-1648751822193.jpg"
   },
   {
@@ -12,7 +12,7 @@
     "name": "Sailing",
     "autor": "Artem Verbo",
     "autorLink": "https://unsplash.com/@artemverbo",
-    "routeI": "/sailing",
+    "routeS": "sailing",
     "img": "indexImage-1648751912815.jpg"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Coaching",
     "autor": "Jamie Street",
     "autorLink": "https://unsplash.com/@jamie452",
-    "routeI": "/coaching",
+    "routeS": "coaching",
     "img": "indexImage-1648752073853.jpg"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Programming",
     "autor": "Clément Hélardot",
     "autorLink": "https://unsplash.com/@clemhlrdt",
-    "routeI": "/programming",
+    "routeS": "programming",
     "img": "indexImage-1648752153737.jpg"
   }
 ]

@@ -4,45 +4,46 @@ const fs = require("fs");
 
 // Exportamos el modulo
 module.exports = {
-	super: (req, res) => {
+
+	superView: (req, res) => {
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "admins", "super.ejs"));
+		res.render(path.resolve(__dirname, "..", "views", "admins", "superView.ejs"));
 	},
 
 	superTable: (req, res) => {
 		//Obtención de Datos del archivo Json
-        let images = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "imagesPrincipalPage.json")));
+        let sections = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "sections.json")));
 
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "admins", "superTable.ejs"), {images});
+		res.render(path.resolve(__dirname, "..", "views", "admins", "superTable.ejs"), {sections});
 	},
 
-	newImg: (req, res) => {
-        res.render(path.resolve(__dirname, "..", "views", "admins", "newImg.ejs"));
+	newSection: (req, res) => {
+        res.render(path.resolve(__dirname, "..", "views", "admins", "newSection.ejs"));
     },
 
-    saveImg: (req, res) => {
+    saveSection: (req, res) => {
         //Obtención de Datos del archivo Json
-        let images = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "imagesPrincipalPage.json")));
+        let sections = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "sections.json")));
 
         //Aqui se indica el formato de como se va a guardar la información
-        let newImage = {
+        let newSection = {
             id: req.body.id,
             name: req.body.name,
             autor: req.body.autor,
 			autorLink: req.body.autorLink,
-            routeI: req.body.routeI,
+            routeS: req.body.routeS,
             img: req.files[0].filename
         }
 
         //Agregamos al array el nuevo producto
-        images.push(newImage);
+        sections.push(newSection);
 
         //Convertimos el array en un string e indicamos que se guarde un producto bajo el otro con "null, 2"
-        let newImagesJson = JSON.stringify(images, null, 2);
+        let newSectionJson = JSON.stringify(sections, null, 2);
 
         //Sobreescribimos el archivo Json guardando el nuevo producto
-        fs.writeFileSync(path.resolve(__dirname,"..", "data", "imagesPrincipalPage.json"), newImagesJson);
+        fs.writeFileSync(path.resolve(__dirname,"..", "data", "sections.json"), newSectionJson);
 
         //Redireccionamos a la vista del administrador
         res.redirect("/super/table");
