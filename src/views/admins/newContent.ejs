@@ -1,0 +1,79 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Nueva Sección Web</p>
+                </div>
+            </div>
+
+            <!-- Formulario de Carga -->
+            <div class="row m-auto">
+                <form class="d-flex flex-column" action="/super/saveContent" method="POST" enctype="multipart/form-data"> <!-- Cada vez que hagamos un formulario donde el archivo viaje a la ruta que especifiquemos tenemos que agregar: enctype = "multipart/form-data" -->
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">ID</label>
+                        <div class="col-10 p-0">
+                            <input name="id" type="number" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Categoría</label>
+                        <div class="col-10 p-0">
+                            <input name="category" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Título</label>
+                        <div class="col-10 p-0">
+                            <input name="title" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Descripción</label>
+                        <div class="col-10 col-lg-11 p-0">
+                            <textarea class="form-control shadow" rows="5" name="description" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Autor de la Imagen</label>
+                        <div class="col-10 p-0">
+                            <input name="autorImg" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Fuente de la Imagen</label>
+                        <div class="col-10 p-0">
+                            <input name="autorLinkImg" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-2 col-form-label">Imagen</label>
+                        <div class="col-10 p-0 custom-file">
+                            <input name="img" type="file" class="form-control" multiple>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="mb-3 btn-group ms-auto">
+                        <a class="btn btn-light shadow alt3rem" href="/super/table" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
+                        <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>
+                        <button type="submit" class="btn btn-light shadow alt3rem" title="Guardar"><img src="/icon/save.svg" class="color-light" alt="Guardar"></button>
+                    </div>
+    
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>

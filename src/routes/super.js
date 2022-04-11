@@ -29,6 +29,8 @@ router.post("/super/savePhrase", controllersSuper.savePhrase);
 router.get("/super/deletePhrase/:id", controllersSuper.deletePhrase);
 router.get("/super/files", controllersSuper.files);
 router.post("/super/saveFile", controllersSuper.saveFile);
+router.get("/super/newContent", controllersSuper.newContent);
+router.post("/super/saveContent", upload.any("images"), controllersSuper.saveContent);
 
 //Exportamos el módulo
 module.exports = router;

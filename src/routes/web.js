@@ -12,6 +12,7 @@ router.get("/about", controllersWeb.about);
 router.get("/contact", controllersWeb.contact);
 router.get("/legal", controllersWeb.legal);
 router.get("/:routeS", controllersWeb.category);
+router.get("/:routeS/:id", controllersWeb.content);
 
 //Exportamos el módulo
 module.exports = router;

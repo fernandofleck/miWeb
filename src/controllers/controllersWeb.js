@@ -29,6 +29,7 @@ module.exports = {
 		//Obtención de Datos del archivo Json
         let sections = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "sections.json")));
         let files = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "files.json")));
+        let contents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "contents.json")));
 
 		//console.log("SECTION: " + req.params.routeS);
 
@@ -37,6 +38,17 @@ module.exports = {
 
 		const categoryFiles = files.filter(file => file.category == req.params.routeS);
 
-		res.render(path.resolve(__dirname, "..", "views", "web", "category.ejs"), {sectionToShow, categoryFiles});
+		const categoryContents = contents.filter(content => content.category == req.params.routeS);
+
+		res.render(path.resolve(__dirname, "..", "views", "web", "category.ejs"), {sectionToShow, categoryFiles, categoryContents});
+	},
+
+	content: (req, res) => {
+		//Obtención de Datos del archivo Json
+        let contents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "contents.json")));
+
+		const contentToShow = contents.find(content => content.id == req.params.id);
+
+		res.render(path.resolve(__dirname, "..", "views", "web", "content.ejs"), {contentToShow});
 	}
 }

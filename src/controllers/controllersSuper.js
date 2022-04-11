@@ -132,5 +132,37 @@ module.exports = {
 
         //Redireccionamos a la vista del administrador
         res.redirect("/super/files");
+    },
+
+    newContent: (req, res) => {
+        res.render(path.resolve(__dirname, "..", "views", "admins", "newContent.ejs"));
+    },
+
+    saveContent: (req, res) => {
+        //Obtención de Datos del archivo Json
+        let contents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "contents.json")));
+
+        //Aqui se indica el formato de como se va a guardar la información
+        let newContent = {
+            id: req.body.id,
+            category: req.body.category,
+            title: req.body.title,
+            description: req.body.description,
+            autorImg: req.body.autorImg,
+			autorLinkImg: req.body.autorLinkImg,
+            img: req.files[0].filename
+        }
+
+        //Agregamos al array el nuevo producto
+        contents.push(newContent);
+
+        //Convertimos el array en un string e indicamos que se guarde un producto bajo el otro con "null, 2"
+        let newContentJson = JSON.stringify(contents, null, 2);
+
+        //Sobreescribimos el archivo Json guardando el nuevo producto
+        fs.writeFileSync(path.resolve(__dirname,"..", "data", "contents.json"), newContentJson);
+
+        //Redireccionamos a la vista del administrador
+        res.redirect("/super/view");
     }
 }

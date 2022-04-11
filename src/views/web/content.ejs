@@ -1,0 +1,29 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+
+        <!-- Float Button -->
+        <%- include("../partials/button.ejs") %>
+        
+        <div class="container mt-6 p-0">
+
+            <!-- Inicio Container -->
+            <img src="./img/contents/<%= contentToShow.img %>" class="float-start img-responsive w-100 rounded-start" alt="...">
+            <div class="position-absolute bottom-0 w-100">
+                <p class="card-text tiny text-center m-2 bg-light bg-opacity-25 rounded"><small class="">Photo by <a class="link-dark" href="<%= contentToShow.autorLinkImg %>"><%= contentToShow.autorImg %></a> on <a class="link-dark" href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></small></p>
+            </div>
+            <h1 class="mt-3 text-center"><%= contentToShow.title %></h1>
+            <p class="my-2"><%= contentToShow.description %></p>
+            <!-- Fin Container -->
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>
