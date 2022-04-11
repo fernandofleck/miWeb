@@ -4,18 +4,17 @@ const fs = require("fs");
 
 // Exportamos el modulo
 module.exports = {
-
-	superView: (req, res) => {
+	admin: (req, res) => {
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "admins", "superView.ejs"));
+		res.render(path.resolve(__dirname, "..", "views", "admins", "admin.ejs"));
 	},
 
-	superTable: (req, res) => {
+	adminTable: (req, res) => {
 		//Obtención de Datos del archivo Json
         let sections = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "sections.json")));
 
 		// Renderizamos la vista
-		res.render(path.resolve(__dirname, "..", "views", "admins", "superTable.ejs"), {sections});
+		res.render(path.resolve(__dirname, "..", "views", "admins", "adminTable.ejs"), {sections});
 	},
 
 	newSection: (req, res) => {
@@ -46,7 +45,7 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname,"..", "data", "sections.json"), newSectionJson);
 
         //Redireccionamos a la vista del administrador
-        res.redirect("/super/table");
+        res.redirect("/admin/table");
     },
 
     phrases: (req, res) => {
@@ -78,7 +77,7 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname,"..", "data", "phrases.json"), newPhrasesJson);
 
         //Redireccionamos a la vista del administrador
-        res.redirect("/super/phrases");
+        res.redirect("/admin/phrases");
     },
 
     deletePhrase: (req, res) => {
@@ -98,7 +97,7 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname, "..", "data", "phrases.json"), phrasesToSave);
 
         // Redireccionamos a la vista
-        res.redirect("/super/phrases");
+        res.redirect("/admin/phrases");
     },
 
     files: (req, res) => {
@@ -131,7 +130,7 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname,"..", "data", "files.json"), newFilesJson);
 
         //Redireccionamos a la vista del administrador
-        res.redirect("/super/files");
+        res.redirect("/admin/files");
     },
 
     newContent: (req, res) => {
@@ -163,6 +162,6 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname,"..", "data", "contents.json"), newContentJson);
 
         //Redireccionamos a la vista del administrador
-        res.redirect("/super/view");
+        res.redirect("/admin");
     }
 }

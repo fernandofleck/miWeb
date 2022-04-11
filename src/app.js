@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Requerimos las rutas
-var webRouter = require('./routes/web');
-var servicesRouter = require("./routes/services");
-var superRouter = require("./routes/super");
+const adminRouter = require("./routes/admin");
+const webRouter = require('./routes/web');
+const servicesRouter = require("./routes/services");
 
 // Requerimos los middlewares
 const maintenance = require("./middlewares/maintenance");
@@ -17,7 +17,7 @@ var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 //app.engine('html', require('ejs').renderFile);//Probando por error que genera vista /super
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,9 +26,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 // Implementamos las rutas
+app.use(adminRouter);
 app.use(webRouter);
 app.use(servicesRouter);
-app.use(superRouter);
 
 // Implementamos los middlewares
 app.use(maintenance);

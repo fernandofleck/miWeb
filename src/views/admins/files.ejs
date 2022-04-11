@@ -14,7 +14,7 @@
 
             <!-- Formulario de Carga -->
             <div class="row m-auto">
-                <form class="d-flex flex-column" action="/super/saveFile" method="POST"> <!-- Cada vez que hagamos un formulario donde el archivo viaje a la ruta que especifiquemos tenemos que agregar: enctype = "multipart/form-data" -->
+                <form class="d-flex flex-column" action="/admin/saveFile" method="POST"> <!-- Cada vez que hagamos un formulario donde el archivo viaje a la ruta que especifiquemos tenemos que agregar: enctype = "multipart/form-data" -->
                     <div class="row mb-3 mx-0 input-group">
                         <label class="col-2 col-form-label">Nombre</label>
                         <div class="col-10 p-0">
@@ -36,7 +36,7 @@
                     
                     
                     <div class="mb-3 btn-group ms-auto">
-                        <a class="btn btn-light shadow alt3rem" href="/super/view" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
+                        <a class="btn btn-light shadow alt3rem" href="/admin" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
                         <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>
                         <button type="submit" class="btn btn-light shadow alt3rem" title="Guardar"><img src="/icon/save.svg" class="color-light" alt="Guardar"></button>
                     </div>
@@ -58,7 +58,7 @@
                             <p class="m-0 p-0 flex-grow-1 align-self-center"><%= files[i].name %></p>
                             <p class="m-0 p-0 flex-grow-1 align-self-center"><%= files[i].category %></p>
                             <!--<a type="button" class="btn btn-sm" title="Editar" aria-label="Editar" href="/super/edit/< phrases[i].id %>"><img src="/icon/edit.svg" class="is-24" alt="Editar"></a>-->
-                            <a type="button" class="btn btn-sm my-auto" title="Eliminar" aria-label="Eliminar" href="/super/deleteFile/<%= files[i].id %>"><img src="/icon/trash-2.svg" class="is-24" alt="Eliminar"></a>
+                            <a type="button" class="btn btn-sm my-auto" title="Eliminar" aria-label="Eliminar" href="/admin/deleteFile/<%= files[i].id %>"><img src="/icon/trash-2.svg" class="is-24" alt="Eliminar"></a>
                         </li>
                     <% } %> 
                 </ul>

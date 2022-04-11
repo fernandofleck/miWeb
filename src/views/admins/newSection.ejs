@@ -14,7 +14,7 @@
 
             <!-- Formulario de Carga -->
             <div class="row m-auto">
-                <form class="d-flex flex-column" action="/super/saveSection" method="POST" enctype="multipart/form-data"> <!-- Cada vez que hagamos un formulario donde el archivo viaje a la ruta que especifiquemos tenemos que agregar: enctype = "multipart/form-data" -->
+                <form class="d-flex flex-column" action="/admin/saveSection" method="POST" enctype="multipart/form-data"> <!-- Cada vez que hagamos un formulario donde el archivo viaje a la ruta que especifiquemos tenemos que agregar: enctype = "multipart/form-data" -->
                     <div class="row mb-3 mx-0 input-group">
                         <label class="col-2 col-form-label">ID</label>
                         <div class="col-10 p-0">
@@ -54,7 +54,7 @@
                     
                     
                     <div class="mb-3 btn-group ms-auto">
-                        <a class="btn btn-light shadow alt3rem" href="/super/table" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
+                        <a class="btn btn-light shadow alt3rem" href="/admin/table" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
                         <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>
                         <button type="submit" class="btn btn-light shadow alt3rem" title="Guardar"><img src="/icon/save.svg" class="color-light" alt="Guardar"></button>
                     </div>

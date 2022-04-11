@@ -88,8 +88,31 @@ body {
     transition: 0.4s;
 }
 
+
 /* Z-Index
 ----------------------------------------------------------------------------------------*/
 .zi-1000{
     z-index: 1000;
+}
+
+
+/* Text
+----------------------------------------------------------------------------------------*/
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content{
+    white-space: pre-wrap;
+    text-align: justify;
+}
+
+
+/* Imagen
+----------------------------------------------------------------------------------------*/
+.fit{
+    object-fit: cover;
+    /*object-position: 50% 50%;*/
 }
