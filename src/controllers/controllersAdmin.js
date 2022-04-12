@@ -116,6 +116,7 @@ module.exports = {
         let newFile = {
             id: files.length + 1,
             name: req.body.name,
+            description: req.body.description,
             category: req.body.category,
 			link: req.body.link,
         }
