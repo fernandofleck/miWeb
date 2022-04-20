@@ -8,6 +8,7 @@ var logger = require('morgan');
 const adminRouter = require("./routes/admin");
 const webRouter = require('./routes/web');
 const servicesRouter = require("./routes/services");
+const usersRouter = require("./routes/users");
 
 // Requerimos los middlewares
 const maintenance = require("./middlewares/maintenance");
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 // Implementamos las rutas
+app.use(usersRouter);
 app.use(adminRouter);
 app.use(webRouter);
 app.use(servicesRouter);

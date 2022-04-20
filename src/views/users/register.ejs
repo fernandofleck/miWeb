@@ -1,0 +1,87 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Registrarse</p>
+                </div>
+            </div>
+
+            <!-- Errores en carga de datos -->
+            <% if (typeof(errors) != 'undefined') { %>
+                <p class='text-light bg-danger text-center'>¡ERROR!</p>
+                <% if (typeof(errors) == 'string') { %>
+                    <p class='text-danger text-center'><%= errors %></p>
+                <% }else{ %>
+                    <ul>
+                        <% for (let i=0; i < errors.length ; i++){ %>
+                            <li class='text-danger text-center'>
+                                <%= errors[i].msg %>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            <% } %>
+            <!-- Fin errores -->
+
+            <!-- Formulario de Carga -->
+            <div class="row">
+                <form class="d-flex flex-column m-auto col-8" action="/registerP" method="POST" enctype="multipart/form-data">
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">Nombre</label>
+                        <div class="col-9 p-0">
+                            <input name="name" type="text" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">E-mail</label>
+                        <div class="col-9 p-0">
+                            <input name="email" type="email" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">Contraseña</label>
+                        <div class="col-9 p-0">
+                            <input name="password" type="password" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">Repetir Contraseña</label>
+                        <div class="col-9 p-0">
+                            <input name="password2" type="password" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">Foto de Perfil</label>
+                        <div class="col-9 p-0 custom-file">
+                            <input name="avatar" type="file" class="form-control shadow" placeholder="Selecciones una imagen para su perfil" multiple>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 btn-group mx-auto mt-4">
+                        <a class="btn btn-light shadow alt3rem" href="/login" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
+                        <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>
+                        <button type="submit" class="btn btn-light yellowLink shadow alt3rem" title="Registrarse">Registrarse</button>
+                    </div>
+
+                    <div class="row my-3 mx-auto input-group">
+                        <p class="text-center"><a class="yellowLink text-decoration-none text-dark" href="/login" title="login">Iniciar Sesión</a></p>
+                    </div>
+    
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>

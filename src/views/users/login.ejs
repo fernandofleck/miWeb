@@ -1,0 +1,58 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <!-- NavBar -->
+        <%- include("../partials/nav.ejs") %>
+        
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col p-4">
+                    <p class="text-red text-center h1">Iniciar Sesión</p>
+                </div>
+            </div>
+
+            <!-- Formulario de Carga -->
+            <div class="row">
+                <form class="d-flex flex-column m-auto col-6" action="/login" method="POST">
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">E-mail</label>
+                        <div class="col-9 p-0">
+                            <input name="email" type="email" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mx-0 input-group">
+                        <label class="col-3 col-form-label">Contraseña</label>
+                        <div class="col-9 p-0">
+                            <input name="password" type="password" class="form-control shadow" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 btn-group mx-auto mt-4">
+                        <div class="form-check align-self-center me-3">
+                            <input class="form-check-input" type="checkbox" value="" id="remember">
+                            <label class="form-check-label" for="remember">
+                                Recordarme
+                            </label>
+                        </div>
+                        <a class="btn btn-light shadow alt3rem" href="/" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
+                        <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>
+                        <button type="submit" class="btn btn-light yellowLink shadow alt3rem" title="Iniciar Sesión">Iniciar Sesión</button>
+                    </div>
+
+                    <div class="row my-3 mx-auto input-group">
+                        <p class="text-center"><a class="yellowLink text-decoration-none text-dark" href="/register" title="register">Registrarse</a></p>
+                    </div>
+    
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <%- include("../partials/footer.ejs") %>
+
+        <!-- JS Bootstrap -->
+        <%- include("../partials/jsBoot.ejs") %> 
+    </body>
+</html>
