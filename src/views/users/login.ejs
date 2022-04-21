@@ -12,6 +12,23 @@
                 </div>
             </div>
 
+            <!-- Errores en carga de datos -->
+            <% if (typeof(errors) != "undefined") { %>
+                <p class="text-light bg-danger text-center">¡ERROR!</p>
+                <% if (typeof(errors) == "string") { %>
+                    <p class="text-danger text-center"><%= errors %></p>
+                <% }else{ %>
+                    <ul>
+                        <% for (let i=0; i < errors.length ; i++){ %>
+                            <li class="text-danger text-center">
+                                <%= errors[i].msg %>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            <% } %>
+            <!-- Fin errores -->
+
             <!-- Formulario de Carga -->
             <div class="row">
                 <form class="d-flex flex-column m-auto col-6" action="/login" method="POST">

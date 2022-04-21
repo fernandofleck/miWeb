@@ -13,14 +13,14 @@
             </div>
 
             <!-- Errores en carga de datos -->
-            <% if (typeof(errors) != 'undefined') { %>
-                <p class='text-light bg-danger text-center'>¡ERROR!</p>
-                <% if (typeof(errors) == 'string') { %>
-                    <p class='text-danger text-center'><%= errors %></p>
+            <% if (typeof(errors) != "undefined") { %>
+                <p class="text-light bg-danger text-center">¡ERROR!</p>
+                <% if (typeof(errors) == "string") { %>
+                    <p class="text-danger text-center"><%= errors %></p>
                 <% }else{ %>
                     <ul>
                         <% for (let i=0; i < errors.length ; i++){ %>
-                            <li class='text-danger text-center'>
+                            <li class="text-danger text-center">
                                 <%= errors[i].msg %>
                             </li>
                         <% } %>
@@ -31,7 +31,7 @@
 
             <!-- Formulario de Carga -->
             <div class="row">
-                <form class="d-flex flex-column m-auto col-8" action="/registerP" method="POST" enctype="multipart/form-data">
+                <form class="d-flex flex-column m-auto col-8" action="/registerP" method="post">
                     <div class="row mb-3 mx-0 input-group">
                         <label class="col-3 col-form-label">Nombre</label>
                         <div class="col-9 p-0">
@@ -56,13 +56,14 @@
                             <input name="password2" type="password" class="form-control shadow" required>
                         </div>
                     </div>
+                    <!--
                     <div class="row mb-3 mx-0 input-group">
                         <label class="col-3 col-form-label">Foto de Perfil</label>
                         <div class="col-9 p-0 custom-file">
                             <input name="avatar" type="file" class="form-control shadow" placeholder="Selecciones una imagen para su perfil" multiple>
                         </div>
                     </div>
-                    
+                    -->
                     <div class="mb-3 btn-group mx-auto mt-4">
                         <a class="btn btn-light shadow alt3rem" href="/login" role="button" title="Volver"><img src="/icon/rotate-ccw.svg" class="color-light" alt="Volver"></a>
                         <button type="reset" class="btn btn-light shadow alt3rem" title="Borrar"><img src="/icon/wind.svg" class="color-light" alt="Borrar"></button>

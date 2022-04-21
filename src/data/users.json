@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "role": 5,
+    "name": "Fer",
+    "email": "fernafleck@gmail.com",
+    "password": "$2a$10$VLBJOjQm8NqoGOOkKmyb3eKFVqOrm3kh1128sF560QTZBxIzTc9kq"
+  }
+]
