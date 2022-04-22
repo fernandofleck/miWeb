@@ -1,6 +1,7 @@
 // Requerimos lo necesario
 const path = require("path");
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 
 // Exportamos el modulo
 module.exports = {
@@ -50,5 +51,35 @@ module.exports = {
 		const contentToShow = contents.find(content => content.id == req.params.id);
 
 		res.render(path.resolve(__dirname, "..", "views", "web", "content.ejs"), {contentToShow});
+	},
+
+	subscribe: (req, res) => {
+		let subscribers = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "subscribers.json")));
+
+		let errors = validationResult(req);
+
+		if (errors.isEmpty()) {
+			let subscriberFind = subscribers.find(subscriber => req.body.email == subscriber.email);
+
+			if (subscriberFind != undefined) {
+				errors.msg = "Email ya suscrito.";
+				return res.render(path.resolve(__dirname, "..", "views", "web", "thanks.ejs"), {errors: errors.msg});
+			};
+
+			let newSubscriber = {
+				name: req.body.name,
+				email: req.body.email
+			};
+
+			subscribers.push(newSubscriber);
+
+			let newSubscribersJson = JSON.stringify(subscribers, null, 2);
+
+			fs.writeFileSync(path.resolve(__dirname, "..", "data", "subscribers.json"), newSubscribersJson);
+
+			return res.render(path.resolve(__dirname, "..", "views", "web", "thanks.ejs"), {errors: undefined});
+		} else {
+            return res.render(path.resolve(__dirname, "..", "views", "web", "thanks.ejs"), {errors: errors.errors});
+        };
 	}
 }

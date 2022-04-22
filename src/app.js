@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Requerimos las rutas
+const webRouter = require('./routes/web');
 const adminRouter = require("./routes/admin");
 const usersRouter = require("./routes/users");
-const webRouter = require('./routes/web');
 
 // Requerimos los middlewares
 const maintenance = require("./middlewares/maintenance");
@@ -26,9 +26,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 // Implementamos las rutas
+app.use(webRouter);
 app.use(adminRouter);
 app.use(usersRouter);
-app.use(webRouter);
 
 // Implementamos los middlewares
 app.use(maintenance);
