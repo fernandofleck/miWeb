@@ -1,18 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let session = require("express-session");
+let app = express();
 
 // Requerimos las rutas
-const webRouter = require('./routes/web');
-const adminRouter = require("./routes/admin");
-const usersRouter = require("./routes/users");
+//const usersRouter = require("./routes/users");
+let webRouter = require("./routes/web");
+//const adminRouter = require("./routes/admin");
 
 // Requerimos los middlewares
-const maintenance = require("./middlewares/maintenance");
+let maintenance = require("./middlewares/maintenance");
 
-var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -24,11 +25,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(session({secret: "1234", resave: true, saveUninitialized: true}));
 
 // Implementamos las rutas
+//app.use(usersRouter);
 app.use(webRouter);
-app.use(adminRouter);
-app.use(usersRouter);
+//app.use(adminRouter);
 
 // Implementamos los middlewares
 app.use(maintenance);

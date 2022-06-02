@@ -4,6 +4,7 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
+const acceso = require("../middlewares/acceso");
 //const multer = require("multer");// Para subir el avatar del usuario que se registre
 
 //Requerimiento de paquete express-validator. Al ser varios parametros lo almacenamos en un objeto literal.
@@ -33,7 +34,7 @@ const upload = multer({storage: storage});*/
 
 //Creación de las rutas
 router.get("/login", controllersUsers.login);
-router.post("/login", [
+router.post("/login", acceso, [
     check("email").isEmail().withMessage("Email no válido."),
     // Comprobación de email registrado.
     body("email").custom(value => {

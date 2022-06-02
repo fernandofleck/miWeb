@@ -4,11 +4,10 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
-// Exportamos el modulo
-module.exports = {
+let controllers = {
 	login: (req, res) => {
 		// Renderizamos la vista
-		return res.render(path.resolve(__dirname, "..", "views", "users", "login.ejs"));
+		res.render(path.resolve(__dirname, "../views/users/login.ejs"));
 	},
 
 	loginPost: (req, res) => {
@@ -21,6 +20,20 @@ module.exports = {
 		// Verificación si hay errores
 		if(errors.isEmpty()){ // isEmpty() devuelve true en caso de estar vacía la variable y false en caso contrario.
 			
+			let userLog = users.find(user => req.body.email == user.email);
+
+			delete userLog.password;
+
+			req.session.usuario = userLog;
+
+			console.log("EXISTE REQ.BODY.REMEMBER???????");
+			console.log(req.body.remember);
+
+			if(req.body.remember){
+				console.log("RECORDADOOOOOOO");
+				res.cookie("email", userLog.email, {maxAge: 1000*60*60*24});
+			}
+
 			//Redireccionamos al login para iniciar sesión
 			return res.redirect("/");
 		} else {
@@ -84,3 +97,6 @@ module.exports = {
         }
     }
 }
+
+// Exportamos el modulo
+module.exports = controllers;
